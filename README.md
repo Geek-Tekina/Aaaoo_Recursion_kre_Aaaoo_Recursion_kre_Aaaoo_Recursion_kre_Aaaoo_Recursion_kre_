@@ -1,6 +1,7 @@
 # Rucursion_Questions
 
-1. https://leetcode.com/problems/climbing-stairs
+1. https://leetcode.com/problems/climbing-stairs <br>
+2. https://leetcode.com/problems/pascals-triangle/
 
   <br><br>
    <br><br>
