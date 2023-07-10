@@ -1,0 +1,31 @@
+class Solution {
+public:
+    void pascal(vector<vector<int>>& ans,vector<int>& curr,int n){
+        if(n==0){
+            //Deciding if n times we have pushbacked in ans
+            return;
+        }
+        if(curr.size()==1){
+            //if we have only one element in curr we need not to calculate
+            ans.push_back(curr);
+            curr.push_back(1);
+            pascal(ans,curr,n-1);
+        }else{
+            //we are traversing 1 to last element and push backing sum of i & i-1 elemnet
+            ans.push_back(curr);
+            vector<int> c1={1};
+            for(int i=1;i<curr.size();i++){
+                c1.push_back(curr[i]+curr[i-1]);
+            }
+            c1.push_back(1);//inserting last 1
+            curr=c1;
+            pascal(ans,curr,n-1);        
+        }
+    }
+    vector<vector<int>> generate(int numRows) {
+        vector<vector<int>> ans;
+        vector<int> curr={1};
+        pascal(ans,curr,numRows);
+        return ans;
+    }
+};
