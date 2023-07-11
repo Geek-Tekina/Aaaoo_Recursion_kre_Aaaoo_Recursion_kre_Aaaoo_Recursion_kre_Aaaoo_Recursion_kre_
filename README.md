@@ -1,7 +1,9 @@
 # Rucursion_Questions
-
+<h3>
 1. https://leetcode.com/problems/climbing-stairs <br>
-2. https://leetcode.com/problems/pascals-triangle/
+2. https://leetcode.com/problems/pascals-triangle/ <br>
+3. https://leetcode.com/problems/is-subsequence/
+</h3>
 
   <br><br>
    <br><br>
