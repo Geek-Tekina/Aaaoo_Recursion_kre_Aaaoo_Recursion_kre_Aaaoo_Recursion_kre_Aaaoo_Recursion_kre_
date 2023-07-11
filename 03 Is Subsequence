@@ -1,0 +1,19 @@
+class Solution {
+public:
+    bool helper(string s , string t , int ptr_s , int ptr_t,int cnt){
+        if(ptr_s == s.size() || ptr_t == t.size()){
+            return cnt == s.size();
+        }
+        if(s[ptr_s] == t[ptr_t]){
+            // cout<<"matched"<<ptr_s<<ptr_t;
+           return helper(s,t,ptr_s+1,ptr_t+1,cnt+1);
+        }
+        return helper(s,t,ptr_s,ptr_t+1,cnt);
+    }
+    bool isSubsequence(string s, string t) {
+      int cnt = 0;
+    //   int size1 = s.size();
+    //   int size2 = t.size();
+     return helper(s,t,0,0,cnt);  
+    }
+};
