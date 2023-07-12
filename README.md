@@ -2,7 +2,8 @@
 <h3>
 1. https://leetcode.com/problems/climbing-stairs <br>
 2. https://leetcode.com/problems/pascals-triangle/ <br>
-3. https://leetcode.com/problems/is-subsequence/
+3. https://leetcode.com/problems/is-subsequence/ <br>
+4. https://leetcode.com/problems/min-cost-climbing-stairs/
 </h3>
 
   <br><br>
