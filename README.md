@@ -5,6 +5,7 @@
 3. https://leetcode.com/problems/is-subsequence/ <br>
 4. https://leetcode.com/problems/min-cost-climbing-stairs/ <br>
 5. https://leetcode.com/problems/n-th-tribonacci-number/ <br>
+6. https://leetcode.com/problems/n-th-tribonacci-number/](https://leetcode.com/problems/jump-game/description/ <br>
 </h3>
 
   <br><br>
