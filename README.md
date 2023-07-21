@@ -6,6 +6,7 @@
 4. https://leetcode.com/problems/min-cost-climbing-stairs/ <br>
 5. https://leetcode.com/problems/n-th-tribonacci-number/ <br>
 6. https://leetcode.com/problems/n-th-tribonacci-number/](https://leetcode.com/problems/jump-game/description/ <br>
+7. https://leetcode.com/problems/house-robber/description/ <br>
 </h3>
 
   <br><br>
