@@ -1,0 +1,40 @@
+TLE REcurion
+class Solution {
+public:
+    bool fn(vector<int> nums, int n){
+        if(n==nums.size()-1) return true;
+        if(n>=nums.size()) return false;
+        
+        bool res=false;
+        for(int i=1; i<=nums[n]; i++){
+            res= res||fn(nums, n+i);
+        }
+        return res;
+    }
+    
+    bool canJump(vector<int>& nums) {
+        return fn(nums, 0);
+    }
+};
+
+DP
+class Solution {
+public:
+    vector<int> dp;
+    
+    bool fn(vector<int> nums, int n){
+        if(n==nums.size()-1) return true;
+        if(n>=nums.size()) return false;
+        if(dp[n]!=-1) return dp[n];
+        
+        for(int i=1; i<=nums[n] and n+i < nums.size(); i++){
+            if(fn(nums, n+i)) return dp[n]=true;
+        }
+        return dp[n]=false;
+    }
+    
+    bool canJump(vector<int>& nums) {
+        dp=vector<int>(nums.size()+1,-1);
+        return fn(nums, 0);
+    }
+};
