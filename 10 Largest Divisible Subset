@@ -1,0 +1,29 @@
+TLE 
+Base condition is beautifully wriiten ..... temp.size() > ans.size WOWOWOWOWOWO !! 💻💻💻
+
+class Solution {
+public:
+    vector<int> ans;
+    void lds(vector<int> temp,int i,int prev,vector<int>& nums){
+        //base condition 
+        if(i>=nums.size()){
+            if(temp.size()>ans.size())  ans=temp;
+            return;
+        }
+        //take 
+        if(nums[i]%prev==0){  
+            temp.push_back(nums[i]);
+            lds(temp,i+1,nums[i],nums);
+            temp.pop_back();
+        }
+        //not take
+        lds(temp,i+1,prev,nums);
+    }
+    
+    vector<int> largestDivisibleSubset(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        vector<int> temp;
+        lds(temp,0,1,nums);
+        return ans;
+    }
+};
