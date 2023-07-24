@@ -8,6 +8,7 @@ You can Practise from here -> https://docs.google.com/document/d/1OQwWUbmWTblNIr
 5. https://leetcode.com/problems/n-th-tribonacci-number/ <br>
 6. https://leetcode.com/problems/jump-game/ <br>
 7. https://leetcode.com/problems/house-robber/description/ <br>
+8. https://leetcode.com/problems/guess-number-higher-or-lower-ii/ <br>
 </h3>
 
   <br><br>
