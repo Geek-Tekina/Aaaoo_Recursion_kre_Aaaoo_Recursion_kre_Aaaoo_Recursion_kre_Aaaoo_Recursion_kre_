@@ -1,4 +1,4 @@
-<h2># Rucursion_Questions</h2>
+<h2># Recursion_Questions</h2>
 
 <h3>
 1. https://leetcode.com/problems/climbing-stairs <br>
