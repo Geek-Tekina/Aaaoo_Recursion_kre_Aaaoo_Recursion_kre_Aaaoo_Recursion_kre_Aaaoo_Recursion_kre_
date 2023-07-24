@@ -1,0 +1,26 @@
+TLE 
+class Solution {
+public:
+    bool helper(vector<int>& nums, int index, int sum1, int sum2) {
+        // Base case
+        if (index == nums.size()) {
+            return sum1 == sum2;
+        }
+
+        // Take the current element for subset 1
+        if (helper(nums, index + 1, sum1 + nums[index], sum2)) {
+            return true;
+        }
+
+        // Take the current element for subset 2
+        if (helper(nums, index + 1, sum1, sum2 + nums[index])) {
+            return true;
+        }
+
+        return false;
+    }
+
+    bool canPartition(vector<int>& nums) {
+        return helper(nums, 0, 0, 0);
+    }
+};
