@@ -90,3 +90,61 @@ public:
 Time Complexity:  O(2^(N * K))
 Space Complexity: O(N)
 */
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+class Solution {
+public:
+    bool canPartitionKSubsets(vector<int>& nums, int k) {
+        int len = nums.size();
+        if(k > len)
+            return false;
+        int sum = 0;
+        for(auto n : nums)
+            sum += n;
+        //impossible to partition
+        if(k > sum || sum%k != 0)
+            return false;
+        int target = sum/k;        
+       //used buckets
+        vector<bool> used(len, false);;
+        //sort the nums in decreasing order
+        sort(nums.begin(), nums.end(), greater());
+        //start back tracking
+        return backtrack(nums, k, 0, 0, target, used);
+    }
+    /*k is the buket number
+    the k bucket has nums[start]
+    used to check if a number has added to the bucket
+    target is the goal of each bucket
+    */
+    bool backtrack(vector<int>& nums, int k, int start, int bucket, int target, vector<bool>& used){
+        int len = nums.size();
+        //base line
+        if(k == 0){
+            return true;
+        }
+        if(bucket > target)
+            return false;
+        
+        if(bucket == target){
+            //filled the current bucket, goto next
+            return backtrack(nums, k-1, 0, 0, target, used);
+        }
+        for(int i = start; i < len; i++){
+            //pruning
+            if(used[i])
+                continue;
+            //back tracking
+            used[i] = true;
+            //next number
+            if(backtrack(nums, k, i + 1, bucket + nums[i], target, used))
+                return true;
+            used[i] = false;
+			//extra prunning
+            if(bucket == 0)
+                break;
+        }
+        return false;
+    }
+};
