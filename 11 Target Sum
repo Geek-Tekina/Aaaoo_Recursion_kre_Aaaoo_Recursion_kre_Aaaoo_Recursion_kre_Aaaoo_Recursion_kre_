@@ -1,0 +1,24 @@
+Recusion - Accepted SOlution
+
+class Solution {
+public:
+    int cnt = 0;
+    void helper(vector<int>&nums, int target, int index,int sum){
+
+        //base case
+        if(index == nums.size()){
+            if(sum == target) cnt++;
+            return ;
+        }
+
+        //plus case
+         helper(nums,target,index+1,sum+nums[index]);
+
+        // minus case
+        helper(nums,target,index+1,sum-nums[index]);
+    }
+    int findTargetSumWays(vector<int>& nums, int target) {
+        helper(nums,target,0,0);
+        return cnt;
+    }
+};
