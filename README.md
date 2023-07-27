@@ -14,6 +14,7 @@
 11. https://leetcode.com/problems/target-sum/description/ <br>
 12. https://leetcode.com/problems/partition-to-k-equal-sum-subsets/description/ <br>
 13. https://leetcode.com/problems/stone-game/ <br>
+14. https://leetcode.com/problems/minimum-falling-path-sum/description/
 </h3>
 
   <br><br>
