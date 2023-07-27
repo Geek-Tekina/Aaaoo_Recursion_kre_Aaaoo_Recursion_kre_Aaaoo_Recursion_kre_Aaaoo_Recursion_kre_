@@ -1,0 +1,54 @@
+TLE 
+
+class Solution {
+public:
+
+    int mod=1e9+7;
+    int dfs(vector<vector<int>>&mat, int i,int j,int n,int m){
+        if(j<0 || j>m-1) return mod;
+        if(i==0) return mat[i][j];
+        int up=mat[i][j]+dfs(mat,i-1,j,n,m);
+        int down=mat[i][j]+dfs(mat,i-1,j-1,n,m);
+        int right=mat[i][j]+dfs(mat,i-1,j+1,n,m);
+        return min(up,min(down,right));
+    }
+
+    int minFallingPathSum(vector<vector<int>>& matrix) {
+        int n=matrix.size();
+        int m=matrix[0].size();
+        int ans=INT_MAX;
+        for(int i=0;i<m;++i){
+            ans=min(ans,dfs(matrix,n-1,i,n,m));
+        }
+        return ans;
+    }
+};
+
+
+DP - Memoization
+
+class Solution {
+public:
+
+    int mod=1e9+7;
+    int dfs(vector<vector<int>>&mat, int i,int j,int n,int m,vector<vector<int>>&dp){
+        if(j<0 || j>m-1) return mod;
+        if(dp[i][j]!=-1) return dp[i][j];
+        if(i==0) return mat[i][j];
+        int up=mat[i][j]+dfs(mat,i-1,j,n,m,dp);
+        int down=mat[i][j]+dfs(mat,i-1,j-1,n,m,dp);
+        int right=mat[i][j]+dfs(mat,i-1,j+1,n,m,dp);
+        return dp[i][j]=min(up,min(down,right));
+    }
+
+    int minFallingPathSum(vector<vector<int>>& matrix) {
+        int n=matrix.size();
+        int m=matrix[0].size();
+        vector<vector<int>>dp(n,vector<int>(m+1,-1));
+        int ans=INT_MAX;
+        for(int i=0;i<m;++i){
+            ans=min(ans,dfs(matrix,n-1,i,n,m,dp));
+        }
+        return ans;
+    }
+};
