@@ -12,6 +12,7 @@
 9. https://leetcode.com/problems/partition-equal-subset-sum/description/ <br>
 10. https://leetcode.com/problems/largest-divisible-subset/description/ <br>
 11. https://leetcode.com/problems/target-sum/description/ <br>
+12. https://leetcode.com/problems/partition-to-k-equal-sum-subsets/description/ <br>
 </h3>
 
   <br><br>
