@@ -1,0 +1,12 @@
+TLE - Recurison
+
+class Solution {
+public:
+   int maxResult(vector<int>& nums, int k, int i = 0) {
+	if(i >= size(nums) - 1) return nums.back();
+	int score = INT_MIN;
+	for(int j = 1; j <= k; j++) 
+		score = max(score, nums[i] + maxResult(nums, k, i + j));
+	return score;
+}
+};
