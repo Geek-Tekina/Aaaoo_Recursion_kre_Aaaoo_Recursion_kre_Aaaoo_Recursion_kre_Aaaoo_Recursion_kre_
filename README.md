@@ -16,6 +16,7 @@
 13. https://leetcode.com/problems/stone-game/ <br>
 14. https://leetcode.com/problems/minimum-falling-path-sum/description/ <br>
 15. https://leetcode.com/problems/jump-game-vi/description/ <br>
+16. https://leetcode.com/problems/number-of-ways-to-reach-a-position-after-exactly-k-steps/
 </h3>
 
   <br><br>
