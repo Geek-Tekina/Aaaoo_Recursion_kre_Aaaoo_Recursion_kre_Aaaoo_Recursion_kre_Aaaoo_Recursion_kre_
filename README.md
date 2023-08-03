@@ -24,5 +24,6 @@
    <center>
   <img src="./giphy (1).gif" height =400 width =300 margin=50>  
   </center>
+  Refer to this doc - > https://docs.google.com/document/d/1OQwWUbmWTblNIrgYyfYNfBdo1LfFUWnZfbirs7EQkvc/edit?pli=1
 
 
