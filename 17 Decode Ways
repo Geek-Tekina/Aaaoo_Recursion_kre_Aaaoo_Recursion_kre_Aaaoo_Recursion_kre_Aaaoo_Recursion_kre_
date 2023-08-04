@@ -1,0 +1,89 @@
+Recursion - TLE
+
+class Solution {
+public:
+int cnt = 0;
+    void helper(string s , int ptr , int size,map<string,string>&mp){
+        //base case
+        if(ptr >= size) {
+            cnt++;
+            return;
+        }
+
+        //mapping 1 char
+        if(s[ptr] != '0'){
+            helper(s,ptr+1,size,mp);
+            //we move forward as 1 - 9 mapping is present in the map
+        }
+        //mapping two character
+        string temp ;
+        temp.push_back(s[ptr]);
+        temp.push_back(s[ptr+1]);
+        if(mp.find(temp)!=mp.end()){
+            helper(s,ptr+2,size,mp);
+        }
+        return;
+
+    }
+    int numDecodings(string s) {
+       if(s[0] == '0') return 0;
+        map<string,string>mp={
+            {"1","A"},
+            {"2","B"},
+            {"3","C"},
+            {"4","D"},
+            {"5","E"},
+            {"6","F"},
+            {"7","G"},
+            {"8","H"},
+            {"9","I"},
+            {"10","J"},
+            {"11","K"},
+            {"12","L"},
+            {"13","M"},
+            {"14","N"},
+            {"15","O"},
+            {"16","P"},
+            {"17","Q"},
+            {"18","R"},
+            {"19","S"},
+            {"20","T"},
+            {"21","U"},
+            {"22","V"},
+            {"23","W"},
+            {"24","X"},
+            {"25","Y"},
+            {"26","Z"}
+        };
+
+       helper(s,0,s.size(),mp);
+       return cnt ; 
+    }
+};
+
+DP 
+
+ int Choices(string s, int index, vector<int> &dp)
+        {
+            if (index == s.size())
+               	//Only 1 char is left as we have reached the end so no choice
+               	//other than taking it
+                return 1;
+            if (dp[index] != -1)
+               	//If sub-problem is solved earlier
+                return dp[index];
+            int res = 0;
+            if (s[index] != '0')
+                res += Choices(s, index + 1, dp);
+           	//Solving for single character
+            if (index + 1 < s.size() && (s[index] == '1' || s[index] == '2' && s[index + 1] <= '6'))
+               	//Solving for double character
+                res += Choices(s, index + 2, dp);
+            return dp[index] = res;
+        }
+    int numDecodings(string s)
+    {
+        int n = s.size();
+        vector<int> dp(n + 1, -1);
+        return Choices(s, 0, dp);
+    }
