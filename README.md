@@ -24,6 +24,7 @@
    <center>
   <img src="./giphy (1).gif" height =400 width =300 margin=50>  
   </center>
+  <hr>
   Refer to this doc - > https://docs.google.com/document/d/1OQwWUbmWTblNIrgYyfYNfBdo1LfFUWnZfbirs7EQkvc/edit?pli=1
-
+  <h4>Note : Some questions of this doc are not in this repo, as I  solved them using other techniques. You can try their recursive codes by going through this doc by -  <emp><u>Manan Bansal</u> </emp></h4>
 
